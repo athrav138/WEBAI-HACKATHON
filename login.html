@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>https://AIbasedPersonalproducvityDASHBOARD/login.com</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      width: 380px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .login-box img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+    .login-box h2 {
+      margin-bottom: 5px;
+      color: #2563eb;
+    }
+    .login-box p.subtitle {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.3s;
+    }
+    .login-box input:focus {
+      border-color: #2563eb;
+      outline: none;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s;
+    }
+    .login-box button:hover {
+      background: #1e40af;
+    }
+    .login-box p.signup {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #444;
+    }
+    .login-box p.signup a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .login-box p.signup a:hover {
+      text-decoration: underline;
+    }
+    .error {
+      color: red;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Logo">
+    <h2>Welcome Back 👋</h2>
+    <p class="subtitle">Login to your AI Productivity Dashboard</p>
+
+    <form onsubmit="return checkLogin(event)">
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <input type="text" id="username" placeholder="Enter Username" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">🔑 Login</button>
+    </form>
+    <p id="error" class="error"></p>
+    <p class="signup">Don’t have an account? <a href="#">Sign up</a></p>
+  </div>
+
+  <script>
+    function checkLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+
+      if (email && user === "admin" && pass === "1234") {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("error").innerText = "❌ Invalid login details!";
+      }
+    }
+  </script>
+</body>
+</html>

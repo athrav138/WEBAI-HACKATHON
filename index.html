@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>https://AIbasedPersonalproducvityDASHBOARD.com</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>⚡ AI Productivity Dashboard</h2>
+    <ul>
+      <li class="active" onclick="showPage('dashboard')">📊 Dashboard</li>
+      <li onclick="showPage('tasks')">📝 Tasks</li>
+      <li onclick="showPage('ai')">🤖 AI Suggestions</li>
+    </ul>
+
+    <div class="login-btn">
+      <button onclick="window.location.href='login.html'">🔑 Login</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Dashboard -->
+    <section id="dashboard" class="page">
+      <h1>Welcome, Atharv 👋</h1>
+      <div class="cards">
+        <div class="card">
+          <h3>📊 Overall Progress</h3>
+          <canvas id="progressChart"></canvas>
+          <p id="progressText"></p>
+        </div>
+        <div class="card">
+          <h3>✅ Completed Tasks</h3>
+          <p id="completed">0</p>
+        </div>
+        <div class="card">
+          <h3>🕒 Pending Tasks</h3>
+          <p id="pending">0</p>
+        </div>
+      </div>
+      <div class="card wide">
+        <h3>📅 Weekly Overview</h3>
+        <canvas id="weeklyChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Tasks -->
+    <section id="tasks" class="page hidden">
+      <h1>Manage Tasks</h1>
+      <div class="task-input">
+        <input type="text" id="taskText" placeholder="Enter task">
+        <input type="date" id="taskDate" required>
+        <select id="taskPriority">
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- AI Suggestions -->
+    <section id="ai" class="page hidden ai-page">
+      <div class="ai-container">
+        <div class="ai-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI Assistant">
+        </div>
+        <div class="ai-right">
+          <h1>AI Smart Planner</h1>
+          <button onclick="generateSuggestions()">Generate Daily Schedule</button>
+          <ul id="suggestions"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p><b>AI Productivity Dashboard</b> — Manage tasks, track progress, and plan with AI.</p>
+      <div class="footer-links">
+        <a href="#" onclick="showPage('dashboard')">Dashboard</a> |
+        <a href="#" onclick="showPage('tasks')">Tasks</a> |
+        <a href="#" onclick="showPage('ai')">AI Suggestions</a>
+      </div>
+      <p class="refs">
+        References: 
+        <a href="https://www.chartjs.org/" target="_blank">Chart.js</a>, 
+        <a href="https://flaticon.com/" target="_blank">Icons</a>
+      </p>
+      <p class="copy">© 2025 Atharv Milind Suryavanshi</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

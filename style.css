@@ -1,0 +1,266 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #222;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 220px;
+  background: linear-gradient(180deg, #2563eb, #9333ea);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Content ===== */
+.content {
+  flex: 1;
+  margin-left: 220px;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* ===== Dashboard Cards ===== */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card.wide {
+  margin-top: 20px;
+}
+
+/* ===== Task Section ===== */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.task-input input,
+.task-input select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.task-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-input button:hover {
+  background: #1e40af;
+}
+
+/* Numbered task list */
+#taskList {
+  counter-reset: task-counter;
+}
+
+#taskList li {
+  counter-increment: task-counter;
+  position: relative;
+  padding: 12px 12px 12px 40px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#taskList li::before {
+  content: counter(task-counter) ".";
+  position: absolute;
+  left: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Task states */
+li.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.high {
+  background: #fee2e2;
+  border-left: 5px solid #ef4444;
+}
+
+.medium {
+  background: #fef9c3;
+  border-left: 5px solid #facc15;
+}
+
+.low {
+  background: #dcfce7;
+  border-left: 5px solid #22c55e;
+}
+
+/* ===== AI Page ===== */
+.ai-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.ai-left img {
+  width: 250px;
+}
+
+.ai-right button {
+  padding: 10px 20px;
+  margin: 15px 0;
+  background: #9333ea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.ai-right button:hover {
+  background: #7e22ce;
+}
+
+.ai-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ai-right li {
+  background: white;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1f2937;
+  color: white;
+  margin-top: 30px;
+  border-top: 3px solid #2563eb;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-links a {
+  color: #60a5fa;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.refs a {
+  color: #a5b4fc;
+  text-decoration: none;
+}
+
+.refs a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+/* ===== Sidebar Login Button ===== */
+.login-btn {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.login-btn button {
+  background: #22c55e;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.login-btn button:hover {
+  background: #16a34a;
+}
+
+/* ===== Utility ===== */
+.hidden {
+  display: none;
+}
